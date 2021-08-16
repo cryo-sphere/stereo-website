@@ -15,21 +15,25 @@ const Dashboard: React.FC<{
 	const [guild2, setGuild2] = useState<Guild | null | undefined>(undefined);
 	const [active, setActive] = useState<Guild | null>(null);
 	const [page, setPage] = useState("stereo");
+	const { query, asPath } = useRouter();
+	const [path] = useState(asPath);
 
-	const { query } = useRouter();
 	useEffect(() => {
 		const load = async () => {
 			const id = Array.isArray(query.id) ? query.id[0] : query.id ?? "";
 
 			const g = await getGuild(id);
-			if (g) setActive(g);
-			setGuild(g);
+			if (path === window.location.pathname) {
+				setActive(g);
+				setGuild(g);
 
-			setGuild2(await getGuild(id, true));
+				const g2 = await getGuild(id, true);
+				setGuild2(g2);
+			}
 		};
 
 		load();
-	}, [query]);
+	}, [query, path]);
 
 	const onClick = () => {
 		setPage("stereo");
