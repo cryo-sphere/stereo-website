@@ -5,20 +5,18 @@ import Guild from "../../components/guild";
 import Loader from "react-loader-spinner";
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/dist/client/router";
 
 const Dashboard: React.FC<{ user: User | null; loading: boolean }> = ({ user, loading }) => {
 	const [guilds, setGuilds] = useState<ApiUserGuilds | null>();
-	const [path] = useState(useRouter().pathname);
 
 	useEffect(() => {
 		const fn = async () => {
 			const res2 = await getGuilds();
-			if (res2 && path === window.location.pathname) setGuilds(res2);
+			if (res2) setGuilds(res2);
 		};
 
 		fn();
-	}, [path]);
+	}, []);
 
 	if (guilds === null)
 		return (
