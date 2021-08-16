@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+
+// colours
+$main: #78a4fa;
+$alt: #548bf7;
+$bg1: #4f5256;
+$bg2: #383839;
+$white: #fbfdfe;
+$black: #272727;
+$green: #57f287;
+$red: #ed4245;
+
+* {
+	font-family: "Poppins", sans-serif;
+	margin: 0;
+	padding: 0;
+	color: $white;
+}
+
+a {
+	text-decoration: none;
+	transition: all 0.5s ease;
+
+	user-select: none; /* standard syntax */
+	-webkit-user-select: none; /* webkit (safari, chrome) browsers */
+	-moz-user-select: none; /* mozilla browsers */
+	-khtml-user-select: none; /* webkit (konqueror) browsers */
+	-ms-user-select: none; /* IE10+ */
+
+	&:hover {
+		color: $main !important;
+	}
+}
+
+body {
+	background-color: $bg1;
+
+	/* hide scroll bar */
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+
+	/* Hide scrollbar for Chrome, Safari and Opera */
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+svg {
+	vertical-align: middle;
+}
+
+.separator {
+	margin-left: 10px;
+	margin-right: 10px;
+	height: 2px;
+	background-color: rgba($white, 0.1);
+}
+
+.background {
+	background: url("/assets/background.svg");
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+}
+
+.background-full {
+	background: url("/assets/background.svg");
+	background-size: 150vw;
+	background-position: center;
+	height: auto;
+	min-height: 100vh;
+	width: 100vw;
+}
+
+// file imports
+@import "./components/saveNotification.scss";
+@import "./components/dropdown.scss";
+@import "./components/Navbar.scss";
+@import "./components/guild.scss";
+
+@import "./pages/dashboard/index.scss";
+@import "./pages/playlists/index.scss";
+@import "./pages/landing.scss";
+@import "./pages/status/404.scss";
+@import "./pages/status/302.scss";

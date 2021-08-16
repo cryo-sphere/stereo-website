@@ -1,0 +1,37 @@
+{
+	"name": "stereo-website-v2",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@types/react-notifications-component": "^3.1.1",
+		"@types/react-rangeslider": "^2.2.4",
+		"@types/react-scroll": "^1.8.3",
+		"@types/react-select": "^4.0.17",
+		"axios": "^0.21.1",
+		"formik": "^2.2.9",
+		"framer-motion": "^4.1.17",
+		"next": "11.1.0",
+		"react": "17.0.2",
+		"react-dom": "17.0.2",
+		"react-loader-spinner": "^4.0.0",
+		"react-notifications-component": "^3.1.0",
+		"react-rangeslider": "^2.2.0",
+		"react-scroll": "^1.8.3",
+		"react-select": "^4.3.1",
+		"react-switch": "^6.0.0",
+		"sass": "^1.36.0",
+		"yup": "^0.32.9"
+	},
+	"devDependencies": {
+		"@types/react": "17.0.15",
+		"eslint": "7.31.0",
+		"eslint-config-next": "11.0.1",
+		"typescript": "4.3.5"
+	}
+}

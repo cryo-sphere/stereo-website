@@ -1,0 +1,39 @@
+.notFound-container {
+	display: grid;
+	place-items: center;
+	height: 100vh;
+}
+
+.notFound {
+	display: grid;
+	place-items: center;
+
+	img {
+		max-height: 300px;
+		margin-bottom: 2rem;
+	}
+
+	p {
+		text-align: center;
+		line-height: 1.5rem;
+		font-size: 1.5rem;
+	}
+
+	a {
+		font-size: 2rem;
+		margin-top: 1rem;
+		background-color: $main;
+		color: $white;
+		padding: 10px;
+		border-radius: 5px;
+
+		i {
+			margin-right: 5px;
+		}
+
+		&:hover {
+			color: $white !important;
+			filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.5));
+		}
+	}
+}

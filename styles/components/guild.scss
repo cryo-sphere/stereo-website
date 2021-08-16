@@ -1,0 +1,104 @@
+.guild-container {
+	p {
+		margin: 0;
+	}
+
+	display: flex;
+	flex: 1 1 0%;
+	height: 60px;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1em;
+	border-radius: 5px;
+	transition: all 0.5s;
+	width: 70vw;
+
+	&:hover {
+		background: $bg1;
+	}
+}
+
+.guild-info {
+	display: flex;
+	align-items: center;
+}
+
+.guild-icon,
+.guild-icon-fallback {
+	height: 50px;
+	border-radius: 50px;
+	background: $black;
+	margin: 0px !important;
+	margin-right: 1rem !important;
+}
+
+.guild-icon-fallback {
+	height: 50px;
+	width: 50px;
+}
+
+.guild-invite {
+	background: $main;
+	padding-left: 1.7rem !important;
+	padding-right: 1.7rem !important;
+
+	&:hover {
+		background: rgba($main, 0.5);
+	}
+}
+
+.guild-dashboard {
+	background: $green;
+
+	&:hover {
+		background: rgba($green, 0.5);
+	}
+}
+
+.guild-invite,
+.guild-dashboard {
+	padding: 5px;
+	border-radius: 5px;
+	transition: all 0.5s !important;
+
+	&:hover {
+		color: $white !important;
+	}
+}
+
+.guild-title {
+	font-size: 1.5rem;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	width: 40vw;
+	white-space: nowrap;
+
+	@media screen and (max-width: 500px) {
+		width: 25vw;
+	}
+
+	@media screen and (max-width: 400px) {
+		width: 20vw;
+	}
+}
+
+.guild-invite,
+.guild-dashboard {
+	font-size: 1rem;
+}
+
+.guilds-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 5rem;
+	background-color: $bg2;
+	padding: 1rem;
+	border-radius: 10px;
+	filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5));
+}
+
+.guild-icon {
+	margin-right: 20px;
+	filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5));
+}
