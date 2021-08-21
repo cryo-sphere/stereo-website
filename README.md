@@ -20,6 +20,8 @@ We expect you to have a basic understanding of JavaScript / TypeScript hosting o
 
 Please don't open issues or ask for support with the reason "... doesn't work". If something does not work, **explain** as detailed as possible what went wrong, how to reproduce it and what versions you used (NodeJS version, etc)
 
+Hosting your own version is allowed, however, please give **credits**. If you do **not** do this, you're not cool. No but seriously, people will eventually find out about it and if that happens, you wish that you neved made such as big mistake. You're in the end not forced to, but it's extremely recommened.
+
 ## Install
 
 **Make sure you have the latest version of NodeJS installed (v16).**
