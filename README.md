@@ -29,9 +29,11 @@ To install all the dependencies, run the following command in your terminal: `ya
 
 After installing the dependencies, run: `yarn run build`. This will create a ".next" folder which will contain all the files needed to run the website.
 
-The last step is to run `yarn start` this will start the web server and launch the dashboard.
+The last step is to run `yarn start` this will start the web server and launch the website.
 
 When you for some reason can only host static files, run `yarn export`, this will generate static html files. (This may disable a few functions, I am not 100% because I don't personally use it)
+
+It's recommened to use `yarn run dev`, the developement server when you want to edit the website. You can restart your server everytime, but there is a reason why they created a developement server, it also saves you a lot of time.
 
 ## Author
 
