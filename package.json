@@ -10,6 +10,7 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"@types/react-beautiful-dnd": "^13.1.1",
 		"@types/react-notifications-component": "^3.1.1",
 		"@types/react-rangeslider": "^2.2.4",
 		"@types/react-scroll": "^1.8.3",
@@ -19,6 +20,7 @@
 		"framer-motion": "^4.1.17",
 		"next": "11.1.0",
 		"react": "17.0.2",
+		"react-beautiful-dnd": "^13.1.0",
 		"react-dom": "17.0.2",
 		"react-loader-spinner": "^4.0.0",
 		"react-notifications-component": "^3.1.0",
@@ -27,6 +29,7 @@
 		"react-select": "^4.3.1",
 		"react-switch": "^6.0.0",
 		"sass": "^1.36.0",
+		"unique-names-generator": "^4.6.0",
 		"yup": "^0.32.9"
 	},
 	"devDependencies": {

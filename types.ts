@@ -62,4 +62,6 @@ export interface Playlist {
 	songs: string[];
 }
 
+export type Playlists = { id: string; name: string }[];
+
 export type Language = { key: string; value: string };

@@ -18,13 +18,6 @@ const Dashboard: React.FC<{ user: User | null; loading: boolean }> = ({ user, lo
 		fn();
 	}, []);
 
-	if (guilds === null)
-		return (
-			<div style={{ minHeight: "100vh", minWidth: "100vw", display: "grid", placeItems: "center" }}>
-				<Loader type="ThreeDots" color="#fff" height={80} width={80} />
-			</div>
-		);
-
 	return !user && !loading ? (
 		<Unauthorized />
 	) : (

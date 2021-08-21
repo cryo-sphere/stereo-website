@@ -10,6 +10,7 @@ $white: #fbfdfe;
 $black: #272727;
 $green: #57f287;
 $red: #ed4245;
+$orange: #ff9d00;
 
 * {
 	font-family: "Poppins", sans-serif;
@@ -18,7 +19,9 @@ $red: #ed4245;
 	color: $white;
 }
 
-a {
+a,
+.link {
+	cursor: pointer;
 	text-decoration: none;
 	transition: all 0.5s ease;
 

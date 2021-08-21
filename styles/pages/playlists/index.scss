@@ -7,6 +7,24 @@
 .playlists-title {
 	font-size: 4rem;
 	font-weight: 400;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 80vw;
+	text-align: center;
+}
+
+.playlist__selection-create {
+	background-color: $main;
+	margin-bottom: 1rem;
+	padding: 5px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.5s ease;
+
+	&:hover {
+		filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
+	}
 }
 
 .playlists-selection {
@@ -25,7 +43,7 @@
 	filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
 }
 
-.playlist {
+.playlist-item {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -40,7 +58,7 @@
 	}
 }
 
-.playlist-breakline {
+.playlist__item-breakline {
 	margin-left: 10px;
 	margin-right: 10px;
 	height: 2px;
@@ -50,7 +68,7 @@
 	margin-bottom: 1rem;
 }
 
-.playlist-number {
+.playlist__item-number {
 	font-size: 2rem;
 	border-radius: 50%;
 	background-color: $main;
@@ -62,9 +80,25 @@
 	text-align: center;
 }
 
-.playlist-title {
+.playlist__item-title {
 	font-size: 2rem;
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
 }
+
+@media screen and (max-width: 960px) {
+	.playlists-title {
+		font-size: 2.5rem;
+	}
+
+	.playlist__item-number {
+		display: none;
+	}
+
+	.playlist-item {
+		justify-content: center;
+	}
+}
+
+@import "./[id].scss";

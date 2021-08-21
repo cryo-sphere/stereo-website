@@ -10,12 +10,12 @@ const Playlist: React.FC<{ number: number; name: string; id: string; last: boole
 	return (
 		<>
 			<Link passHref href={`/playlists/${id}`}>
-				<div className="playlist">
-					<p className="playlist-number">{number}</p>
-					<p className="playlist-title">{name}</p>
+				<div className="playlist-item">
+					<p className="playlist__item-number">{number}</p>
+					<p className="playlist__item-title">{name}</p>
 				</div>
 			</Link>
-			{!last && <div className="playlist-breakline" />}
+			{!last && <div className="playlist__item-breakline" />}
 		</>
 	);
 };

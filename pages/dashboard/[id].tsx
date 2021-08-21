@@ -20,13 +20,14 @@ const Dashboard: React.FC<{
 	useEffect(() => {
 		const load = async () => {
 			const id = Array.isArray(query.id) ? query.id[0] : query.id ?? "";
+			if (id) {
+				const g = await getGuild(id);
+				if (g) setActive(g);
+				setGuild(g);
 
-			const g = await getGuild(id);
-			if (g) setActive(g);
-			setGuild(g);
-
-			const g2 = await getGuild(id, true);
-			setGuild2(g2);
+				const g2 = await getGuild(id, true);
+				setGuild2(g2);
+			}
 		};
 
 		load();

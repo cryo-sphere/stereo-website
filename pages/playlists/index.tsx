@@ -1,28 +1,41 @@
-import { Playlist as PlaylistType, User } from "../../types";
+import { Playlists as PlaylistsType, User } from "../../types";
 import Playlist from "../../components/playlist";
 import Head from "next/head";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Unauthorized from "../../components/unauthorized";
-
-export const getServerSideProps = async () => {
-	const playlists: PlaylistType[] = [
-		{ name: "test", id: "1", songs: ["https://www.youtube.com/watch?v=Ij8bRn7ZH3w&pp=sAQA"] },
-		{ name: "test 2", id: "3", songs: ["https://www.youtube.com/watch?v=Ij8bRn7ZH3w&pp=sAQA"] },
-		{ name: "test 3", id: "2", songs: ["https://www.youtube.com/watch?v=Ij8bRn7ZH3w&pp=sAQA"] },
-	];
-
-	return {
-		props: {
-			playlists,
-		},
-	};
-};
+import Loader from "react-loader-spinner";
+import { createPlaylist, getPlaylists } from "../../utils/Playlists";
+import { uniqueNamesGenerator, animals, adjectives, colors } from "unique-names-generator";
 
 const PlaylistLanding: React.FC<{
 	user: User | null;
 	loading: boolean;
-	playlists: PlaylistType[];
-}> = ({ user, loading, playlists }) => {
+}> = ({ user, loading }) => {
+	const [playlists, setPlaylists] = useState<PlaylistsType | null>();
+	const [creating, setCreating] = useState(false);
+
+	useEffect(() => {
+		const fn = async () => {
+			const data = await getPlaylists();
+			if (data) setPlaylists(data);
+		};
+
+		fn();
+	}, []);
+
+	const create = async () => {
+		setCreating(true);
+		const name = uniqueNamesGenerator({
+			dictionaries: [adjectives, colors, animals],
+			separator: " ",
+			length: 3,
+		}).slice(0, 32);
+
+		const id = await createPlaylist(name);
+		if (id) window.location.href = `/playlists/${id}`;
+		else setCreating(false);
+	};
+
 	return !user && !loading ? (
 		<Unauthorized />
 	) : (
@@ -30,22 +43,35 @@ const PlaylistLanding: React.FC<{
 			<Head>
 				<title>Stereo - Playlists</title>
 			</Head>
-			<main className="background-full">
-				<div className="playlists-top">
-					<h1 className="playlists-title">Your Playlists</h1>
+			{creating ? (
+				<div style={{ width: "100vw", height: "100vh", display: "grid", placeItems: "center" }}>
+					<Loader type="ThreeDots" color="#fff" height={120} width={120} />
 				</div>
-				<div className="playlists-selection">
-					{playlists.map((playlist, i, arr) => (
-						<Playlist
-							key={i}
-							id={playlist.id}
-							number={i + 1}
-							name={playlist.name}
-							last={arr.reverse()[0].id === playlist.id}
-						/>
-					))}
-				</div>
-			</main>
+			) : (
+				<main className="background-full" style={{ paddingBottom: "2rem" }}>
+					<div className="playlists-top">
+						<h1 className="playlists-title">Your Playlists</h1>
+					</div>
+					<div className="playlists-selection">
+						<p className="playlist__selection-create" onClick={create}>
+							Create new playlist
+						</p>
+						{playlists ? (
+							playlists.map((playlist, i) => (
+								<Playlist
+									key={i}
+									id={playlist.id}
+									number={i + 1}
+									name={playlist.name}
+									last={i + 1 >= playlists.length}
+								/>
+							))
+						) : (
+							<Loader type="ThreeDots" color="#fff" height={120} width={120} />
+						)}
+					</div>
+				</main>
+			)}
 		</>
 	);
 };

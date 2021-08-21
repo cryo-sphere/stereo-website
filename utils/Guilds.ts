@@ -51,7 +51,7 @@ export const getGuild = async (guildId: string, second = false): Promise<Guild |
 		store.addNotification({
 			container: "bottom-right",
 			title: "An unexpected error occured",
-			message: "We were unable to retrieve your server list",
+			message: "We were unable to retrieve the server data",
 			type: "danger",
 			dismiss: {
 				duration: 5e3,
@@ -72,7 +72,7 @@ export const updateGuild = async (
 ): Promise<Guild | null> => {
 	try {
 		const res = await axios.post(
-			getApi(second ? 2 : 1) + "/api/guild/update",
+			getApi(second ? 2 : 1) + "/api/guild",
 			{ data: body, guildId },
 			getHeaders(true)
 		);
@@ -82,7 +82,7 @@ export const updateGuild = async (
 		store.addNotification({
 			container: "bottom-right",
 			title: "An unexpected error occured",
-			message: "We were unable to retrieve your server list",
+			message: "We were unable to update the server configuration",
 			type: "danger",
 			dismiss: {
 				duration: 5e3,

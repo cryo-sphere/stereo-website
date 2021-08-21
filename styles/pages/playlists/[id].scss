@@ -1,0 +1,281 @@
+.playlist-info {
+	padding-top: 10rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.playlist__info-edit {
+	display: flex;
+	align-items: center;
+	height: 72px;
+}
+
+.playlist__title-edit {
+	margin-left: 10px;
+	font-size: 2rem;
+	color: rgba($white, 0.6);
+	transition: all 0.5s ease;
+	cursor: pointer;
+
+	&:hover {
+		color: rgba($white, 0.9);
+	}
+
+	&.fas.fa-check {
+		color: rgba($green, 0.6);
+		transition: all 0.5s ease;
+		cursor: pointer;
+
+		&:hover {
+			color: rgba($green, 0.9);
+		}
+	}
+}
+
+.playlist-title {
+	font-size: 3rem;
+	font-weight: 600;
+	max-width: 80vw;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.playlist-count {
+	filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5));
+	font-size: 1.5rem;
+	font-weight: 300;
+}
+
+.playlist-back-button {
+	font-size: 1.5rem;
+	margin-left: 15vw;
+
+	color: rgba($white, 0.5);
+	&:hover {
+		color: rgba($white, 0.8) !important;
+
+		i {
+			color: rgba($white, 0.8);
+		}
+	}
+
+	i {
+		color: rgba($white, 0.5);
+		transition: all 0.5s ease;
+	}
+}
+
+.playlist-songs {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+
+	background-color: $bg2;
+	margin-left: 15vw;
+	margin-right: 15vw;
+	margin-top: 1rem;
+	border-radius: 10px;
+	padding: 2rem;
+}
+
+.playlist__songs-buttons {
+	display: flex;
+	justify-content: space-between;
+	width: 250px;
+}
+
+.playlist-add-song,
+.playlist-delete {
+	cursor: pointer;
+	padding: 5px;
+	border-radius: 5px;
+	transition: all 0.5s ease;
+
+	&:hover {
+		filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5));
+	}
+}
+
+.playlist-add-song {
+	background-color: $main;
+
+	&.placeholder {
+		background-color: rgba($main, 0.1);
+		color: rgba($white, 0.1);
+		cursor: not-allowed;
+
+		&:hover {
+			filter: none !important;
+		}
+	}
+}
+
+.playlist-delete {
+	background-color: $red;
+
+	&.placeholder {
+		background-color: rgba($red, 0.1);
+		color: rgba($white, 0.1);
+		cursor: not-allowed;
+
+		&:hover {
+			filter: none !important;
+		}
+	}
+}
+
+.playlist-song {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	justify-content: center;
+	transition: all 0.5s ease;
+	padding: 10px;
+	border-radius: 5px;
+
+	&:hover {
+		background-color: $bg1;
+	}
+}
+
+.playlist__song-link {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.playlist-droppable {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.song-draggable {
+	user-select: none;
+	padding: 16px;
+	border-radius: 5px;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: 30px;
+	background-color: $bg2;
+
+	&.dragging {
+		background-color: $bg1;
+	}
+}
+
+.song__draggable-input {
+	width: 250px;
+	background-color: $black;
+	border: none;
+	outline: none;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.playlist__song-value {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	margin-right: 5px;
+}
+
+.song__draggable-buttons {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 90px;
+	min-width: 90px;
+	font-size: 1.5rem;
+
+	.fas.fa-times {
+		font-size: 2rem;
+		color: rgba($red, 0.6);
+		transition: all 0.5s ease;
+		cursor: pointer;
+
+		&:hover {
+			color: rgba($red, 0.9);
+		}
+	}
+
+	.fas.fa-edit {
+		cursor: pointer;
+		color: rgba($white, 0.6);
+		transition: all 0.5s ease;
+		cursor: pointer;
+
+		&:hover {
+			color: rgba($white, 0.9);
+		}
+	}
+
+	.fas.fa-check {
+		color: rgba($green, 0.6);
+		transition: all 0.5s ease;
+		cursor: pointer;
+
+		&:hover {
+			color: rgba($green, 0.9);
+		}
+	}
+
+	.fas.fa-undo-alt {
+		color: rgba($orange, 0.6);
+		transition: all 0.5s ease;
+		cursor: pointer;
+
+		&:hover {
+			color: rgba($orange, 0.9);
+		}
+	}
+}
+
+@media screen and (max-width: 960px) {
+	.playlist-songs {
+		margin-left: 2vw;
+		margin-right: 2vw;
+	}
+
+	.playlist__song-value {
+		max-width: 80vw;
+		min-height: 25px;
+	}
+
+	.song__draggable-input {
+		max-width: 80vw;
+	}
+
+	.playlist-back-button {
+		margin-left: 2vw;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.song-draggable {
+		flex-direction: column;
+		height: 50px;
+		align-items: center;
+	}
+}
+
+@media screen and (max-width: 300px) {
+	.playlist__songs-buttons {
+		flex-direction: column;
+		text-align: center;
+		width: fit-content;
+	}
+
+	.playlist-delete {
+		margin-top: 10px;
+	}
+
+	.playlist-back-button {
+		font-size: 1.2rem;
+	}
+}
