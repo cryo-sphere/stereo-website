@@ -82,9 +82,11 @@ svg {
 @import "./components/Navbar.scss";
 @import "./components/guild.scss";
 @import "./components/footer.scss";
+@import "./components/usercard.scss";
 
 @import "./pages/dashboard/index.scss";
 @import "./pages/playlists/index.scss";
 @import "./pages/landing.scss";
 @import "./pages/status/404.scss";
 @import "./pages/status/302.scss";
+@import "./pages/contributors/index.scss";

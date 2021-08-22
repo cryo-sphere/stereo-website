@@ -1,0 +1,42 @@
+[
+	{
+		"username": "DaanGamesDG",
+		"image": "https://cdn.daangamesdg.wtf/discord/pfp.gif",
+		"roles": ["💻", "💼", "💡", "📖", "🔡"]
+	},
+	{
+		"username": "Eluzmog",
+		"image": "https://cdn.discordapp.com/attachments/762043197429252137/879039113624453150/f0c39ded9bbaa2b5623682e3710f5174.png",
+		"roles": ["💼", "💡", "📖", "🔡"]
+	},
+	{
+		"username": "Yukio",
+		"image": "https://cdn.discordapp.com/attachments/762043197429252137/879039165113716836/8b8c39244d9de336826317a6e5891f43.png",
+		"roles": ["💼", "🎨", "📖", "🔡"]
+	},
+	{
+		"username": "OneTrackMinded",
+		"image": "https://cdn.discordapp.com/attachments/762043197429252137/879039091499487282/59f24c3be9788d56f05ba4c560f43c3f.png",
+		"roles": ["💼", "💡", "📖", "🔡"]
+	},
+	{
+		"username": "Hasepfote",
+		"image": "https://cdn.discordapp.com/attachments/762043197429252137/879029028659539978/cbdada5878c805b12c93cbe26471e1dd.png",
+		"roles": ["📖", "🔡"]
+	},
+	{
+		"username": "Barich",
+		"image": "https://cdn.discordapp.com/attachments/762043197429252137/879029004668117042/505c5eef400a0c3567189c816ec68ba9.png",
+		"roles": ["🔡"]
+	},
+	{
+		"username": "Allan",
+		"image": "https://cdn.discordapp.com/attachments/762043197429252137/879039724537401354/fbeb9a2e6d3f37064cb680946dd3b959.png",
+		"roles": ["🔡"]
+	},
+	{
+		"username": "Droby911",
+		"image": "https://cdn.discordapp.com/attachments/762043197429252137/879039849871605760/fe5be51439b71810322673237f016532.png",
+		"roles": ["🔡"]
+	}
+]

@@ -35,8 +35,8 @@ const Navbar: React.FC<{ user: User | null }> = ({ user }) => {
 				<Link href="/status">
 					<a onClick={closeMenu}>Status</a>
 				</Link>
-				<Link href="/about">
-					<a onClick={closeMenu}>About</a>
+				<Link href="/contributors">
+					<a onClick={closeMenu}>Contributors</a>
 				</Link>
 			</div>
 			<div className="nav-buttons">
