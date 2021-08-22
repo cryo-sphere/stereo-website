@@ -6,7 +6,9 @@ const Footer: React.FC = () => {
 		<div className="footer">
 			<div className="footer-level-1">
 				<div className="footer-info">
-					<div className="footer__info-branding">
+					<div
+						className="footer__info-branding"
+						onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
 						<img src="https://cdn.stereo-bot.tk/branding/logo.png" alt="" />
 						<h1>Stereo</h1>
 					</div>
