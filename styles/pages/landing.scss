@@ -44,7 +44,7 @@
 	z-index: 1;
 }
 
-.landing-dark.last {
+.landing-black.last {
 	display: grid;
 	place-items: center;
 	padding-bottom: 10rem;
@@ -101,8 +101,8 @@
 
 @media screen and (max-width: 960px) {
 	.landing-blue,
-	.landing-dark {
-		flex-direction: column;
+	.landing-black {
+		flex-direction: column !important;
 
 		img {
 			width: 15rem;

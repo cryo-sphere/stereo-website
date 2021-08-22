@@ -50,19 +50,20 @@
 	display: flex;
 	width: 200px;
 	justify-content: space-between;
+	cursor: pointer;
 
-	p {
+	a {
 		font-size: 1.5rem;
 		color: rgba($white, 0.5);
 		transition: all 0.5s ease;
 		cursor: pointer;
 
 		&:hover {
-			color: rgba($white, 0.65);
+			color: rgba($white, 0.65) !important;
 		}
 
 		&.active {
-			color: rgba($white, 0.9);
+			color: rgba($white, 0.9) !important;
 			transition: all 0.5s ease;
 			cursor: default;
 		}

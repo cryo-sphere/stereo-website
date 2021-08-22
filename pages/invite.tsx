@@ -34,6 +34,15 @@ const Invite: React.FC<InferGetServerSidePropsType<typeof getServerSideProps>> =
 				<>
 					<Head>
 						<title>301 - Redirecting to Invite Page</title>
+						<meta property="og:site_name" content="Stereo" />
+						<meta property="og:title" content="Stereo - Invite" />
+						<meta property="og:type" content="site" />
+						<meta property="og:url" content="https://stereo-bot.tk/invite" />
+						<meta
+							property="og:description"
+							content="Invite Stereo now and profit from all the free features bots like Groovy and Rythm don't have with their free version!!"
+						/>
+						<meta property="og:image" content="https://cdn.stereo-bot.tk/branding/logo.png" />
 					</Head>
 					<div className="redirect-container background">
 						<div className="redirect">
@@ -52,6 +61,15 @@ const Invite: React.FC<InferGetServerSidePropsType<typeof getServerSideProps>> =
 				<>
 					<Head>
 						<title>Stereo - Invite Page</title>
+						<meta property="og:site_name" content="Stereo" />
+						<meta property="og:title" content="Stereo - Invite" />
+						<meta property="og:type" content="site" />
+						<meta property="og:url" content="https://stereo-bot.tk/invite" />
+						<meta
+							property="og:description"
+							content="Invite Stereo now and profit from all the free features bots like Groovy and Rythm don't have with their free version!!"
+						/>
+						<meta property="og:image" content="https://cdn.stereo-bot.tk/branding/logo.png" />
 					</Head>
 					<div className="redirect-container background">
 						<div className="redirect">

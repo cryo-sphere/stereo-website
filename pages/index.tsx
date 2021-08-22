@@ -11,6 +11,15 @@ const Landing: React.FC = () => {
 		<>
 			<Head>
 				<title>Stereo - The best free Discord music bot</title>
+				<meta property="og:site_name" content="Stereo" />
+				<meta property="og:title" content="Stereo" />
+				<meta property="og:type" content="site" />
+				<meta property="og:url" content="https://stereo-bot.tk" />
+				<meta
+					property="og:description"
+					content="Stereo is the only music bot you will ever need, the best audio quality, filters and more completely free!"
+				/>
+				<meta property="og:image" content="https://cdn.stereo-bot.tk/branding/logo.png" />
 			</Head>
 			<main>
 				<div className="landing-top background-full">
@@ -177,7 +186,7 @@ const Landing: React.FC = () => {
 									d="M0,96L80,117.3C160,139,320,181,480,176C640,171,800,117,960,106.7C1120,96,1280,128,1360,144L1440,160L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
 							</svg>
 						</div>
-						<div className="landing-dark last">
+						<div className="landing-black last">
 							<div className="section-text">
 								<p className="strong">
 									<strong>Now what are you waiting for?</strong>

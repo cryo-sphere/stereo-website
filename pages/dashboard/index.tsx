@@ -24,6 +24,15 @@ const Dashboard: React.FC<{ user: User | null; loading: boolean }> = ({ user, lo
 		<>
 			<Head>
 				<title>Stereo - Servers</title>
+				<meta property="og:site_name" content="Stereo" />
+				<meta property="og:title" content="Stereo - Dashboard" />
+				<meta property="og:type" content="site" />
+				<meta property="og:url" content="https://stereo-bot.tk/dashboard" />
+				<meta
+					property="og:description"
+					content="Stereo comes with an easy-to-use dashboard. Here you can edit the settings from both Stereo 1 and 2!"
+				/>
+				<meta property="og:image" content="https://cdn.stereo-bot.tk/branding/logo.png" />
 			</Head>
 			<div className="background-full guilds-wrapper">
 				<div className="guilds-container">

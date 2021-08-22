@@ -157,6 +157,15 @@ const PlaylistComponent: React.FC = () => {
 		<>
 			<Head>
 				<title>Playlist - {playlist.name}</title>
+				<meta property="og:site_name" content="Stereo" />
+				<meta property="og:title" content="Stereo - Playlist" />
+				<meta property="og:type" content="site" />
+				<meta property="og:url" content="https://stereo-bot.tk/playlists" />
+				<meta
+					property="og:description"
+					content="Stereo has custom playlists, you can have up to 100 playlists with 100 songs each. It doesn't matter which link you provide, as long as it's playable!"
+				/>
+				<meta property="og:image" content="https://cdn.stereo-bot.tk/branding/logo.png" />
 			</Head>
 			<main className="background-full" style={{ paddingTop: "2rem" }}>
 				<div className="playlist-info">

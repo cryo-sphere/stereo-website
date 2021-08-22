@@ -12,51 +12,32 @@ const Dashboard: React.FC<{
 	loading: boolean;
 }> = ({ user, loading }) => {
 	const [guild, setGuild] = useState<Guild | null | undefined>(undefined);
-	const [guild2, setGuild2] = useState<Guild | null | undefined>(undefined);
-	const [active, setActive] = useState<Guild | null>(null);
-	const [page, setPage] = useState("stereo");
 
 	const { query } = useRouter();
 	useEffect(() => {
 		const load = async () => {
 			const id = Array.isArray(query.id) ? query.id[0] : query.id ?? "";
-			if (id) {
-				const g = await getGuild(id);
-				if (g) setActive(g);
-				setGuild(g);
+			const bot = Array.isArray(query.bot) ? Number(query.bot[0]) : Number(query.bot) ?? 1;
 
-				const g2 = await getGuild(id, true);
-				setGuild2(g2);
+			if (id) {
+				const g = await getGuild(id, bot === 2);
+				setGuild(g || null);
 			}
 		};
 
 		load();
 	}, [query]);
 
-	const onClick = () => {
-		setPage("stereo");
-		setActive(guild!);
-	};
-
-	const onClick2 = guild2
-		? () => {
-				setPage("stereo2");
-				setActive({ ...guild2, partner: true });
-		  }
-		: onClick;
-
 	if (!loading && !user) return <Unauthorized />;
 
-	if (guild === undefined)
-		return (
-			<div style={{ minHeight: "100vh", minWidth: "100vw", display: "grid", placeItems: "center" }}>
-				<Loader type="ThreeDots" color="#fff" height={80} width={80} />
-			</div>
-		);
-
-	if (active === null) return <NotFound />;
-	return (
-		<Settings guild={active} onClick1={onClick} onClick2={onClick2} active={page} both={!!guild2} />
+	return guild ? (
+		<Settings guild={guild} />
+	) : guild === null ? (
+		<NotFound />
+	) : (
+		<div style={{ minHeight: "100vh", minWidth: "100vw", display: "grid", placeItems: "center" }}>
+			<Loader type="ThreeDots" color="#fff" height={80} width={80} />
+		</div>
 	);
 };
 

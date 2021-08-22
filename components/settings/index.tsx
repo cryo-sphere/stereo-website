@@ -6,24 +6,26 @@ import { getIcon, updateGuild } from "../../utils/Guilds";
 import Slider from "../../components/Silder";
 import Switch from "../../components/Switch";
 import Image from "../../components/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import * as Yup from "yup";
+import { useRouter } from "next/router";
 
 const Settings: React.FC<{
 	guild: Guild;
-	active: string;
-	both: boolean;
-	onClick1: () => void;
-	onClick2: () => void;
-}> = ({ guild, onClick1, onClick2, active, both }) => {
+}> = ({ guild }) => {
 	const [config, setConfig] = useState(guild.config);
+	const { query } = useRouter();
 
 	const updateConfig = async (data: GuildConfig) => {
 		setConfig(data);
-		await updateGuild(guild.id, data, active === "stereo2");
+		await updateGuild(guild.id, data, query.bot === "2");
 	};
+
+	useEffect(() => {
+		setConfig(guild.config);
+	}, [guild]);
 
 	const validationSchema = Yup.object({
 		djrole: Yup.string()
@@ -61,6 +63,15 @@ const Settings: React.FC<{
 		<main className="main background-full">
 			<Head>
 				<title>Stereo - Dashboard</title>
+				<meta property="og:site_name" content="Stereo" />
+				<meta property="og:title" content="Stereo - Dashboard" />
+				<meta property="og:type" content="site" />
+				<meta property="og:url" content="https://stereo-bot.tk/dashboard" />
+				<meta
+					property="og:description"
+					content="Stereo comes with an easy-to-use dashboard. Here you can edit the settings from both Stereo 1 and 2!"
+				/>
+				<meta property="og:image" content="https://cdn.stereo-bot.tk/branding/logo.png" />
 			</Head>
 			<div className="dashboard-title">
 				<Image
@@ -82,19 +93,17 @@ const Settings: React.FC<{
 					</a>
 				</Link>
 				<div className="bot-selection">
-					<p className={active === "stereo" ? "active" : ""} onClick={onClick1}>
-						Stereo
-					</p>
-					<p
-						className={active === "stereo2" ? "active" : both ? "" : "disabled"}
-						onClick={onClick2}>
-						Stereo 2
-					</p>
+					<Link href={`/dashboard/${guild.id}`}>
+						<a className={query.bot !== "2" ? "active" : ""}>Stereo</a>
+					</Link>
+					<Link href={`/dashboard/${guild.id}?bot=2`}>
+						<a className={query.bot === "2" ? "active" : ""}>Stereo 2</a>
+					</Link>
 				</div>
 			</div>
 			<Formik
 				onSubmit={updateConfig}
-				initialValues={guild.config}
+				initialValues={config}
 				validationSchema={validationSchema}
 				validateOnMount
 				enableReinitialize>

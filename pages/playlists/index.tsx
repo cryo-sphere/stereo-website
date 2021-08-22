@@ -42,6 +42,15 @@ const PlaylistLanding: React.FC<{
 		<>
 			<Head>
 				<title>Stereo - Playlists</title>
+				<meta property="og:site_name" content="Stereo" />
+				<meta property="og:title" content="Stereo - playlists" />
+				<meta property="og:type" content="site" />
+				<meta property="og:url" content="https://stereo-bot.tk/playlists" />
+				<meta
+					property="og:description"
+					content="Stereo has custom playlists, you can have up to 100 playlists with 100 songs each. It doesn't matter which link you provide, as long as it's playable!"
+				/>
+				<meta property="og:image" content="https://cdn.stereo-bot.tk/branding/logo.png" />
 			</Head>
 			{creating ? (
 				<div style={{ width: "100vw", height: "100vh", display: "grid", placeItems: "center" }}>

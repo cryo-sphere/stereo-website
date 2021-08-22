@@ -10,6 +10,15 @@ const Login: React.FC = () => {
 		<>
 			<Head>
 				<title>Stereo - Login Page</title>
+				<meta property="og:site_name" content="Stereo" />
+				<meta property="og:title" content="Stereo - Login" />
+				<meta property="og:type" content="site" />
+				<meta property="og:url" content="https://stereo-bot.tk/login" />
+				<meta
+					property="og:description"
+					content="Stereo comes with an easy-to-use dashboard. Here you can edit the settings from both Stereo 1 and 2!"
+				/>
+				<meta property="og:image" content="https://cdn.stereo-bot.tk/branding/logo.png" />
 			</Head>
 			<div className="redirect-container background">
 				<div className="redirect">

@@ -9,6 +9,7 @@ import Navbar from "../components/navbar";
 import type { AppProps } from "next/app";
 import { getUser } from "../utils/User";
 import { User } from "../types";
+import Footer from "../components/footer";
 
 const App = ({ Component, pageProps, router }: AppProps) => {
 	const [loading, setLoading] = useState<boolean>(true);
@@ -43,6 +44,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
 					<Component {...pageProps} {...{ user, loading }} />
 				</motion.div>
 			</AnimatePresence>
+			<Footer />
 		</>
 	);
 };
