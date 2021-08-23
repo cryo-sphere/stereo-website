@@ -167,7 +167,7 @@ const PlaylistComponent: React.FC = () => {
 				/>
 				<meta property="og:image" content="https://cdn.stereo-bot.tk/branding/logo.png" />
 			</Head>
-			<main className="background-full" style={{ paddingTop: "2rem" }}>
+			<main className="background-full" style={{ paddingTop: "2rem", paddingBottom: "2rem" }}>
 				<div className="playlist-info">
 					{isOwner ? (
 						<div className="playlist__info-edit">
