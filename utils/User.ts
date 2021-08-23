@@ -1,6 +1,6 @@
 import { store } from "react-notifications-component";
 import { getApi, getHeaders } from ".";
-import axios from "axios";
+import axios, { CancelToken } from "axios";
 import { User } from "../types";
 
 export const getAvatar = (options: {
@@ -24,9 +24,9 @@ export const formatName = (name: string, discrim: number, len: number): string =
 
 export const getLogin = () => getApi() + "/oauth/login";
 
-export const getUser = async (): Promise<User | null> => {
+export const getUser = async (token: CancelToken): Promise<User | null> => {
 	try {
-		const res = await axios.get<User>(getApi() + "/api/user", getHeaders(true));
+		const res = await axios.get<User>(getApi() + "/api/user", getHeaders(true, token));
 
 		return res.data
 			? {
@@ -40,6 +40,8 @@ export const getUser = async (): Promise<User | null> => {
 			  }
 			: null;
 	} catch (e) {
+		if (e.message && e.message === "cancelled") return null;
+
 		store.addNotification({
 			container: "bottom-right",
 			title: "An unexpected error occured",

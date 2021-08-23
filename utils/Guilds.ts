@@ -1,7 +1,7 @@
 import { store } from "react-notifications-component";
 import { ApiUserGuilds, Guild, GuildConfig } from "../types";
 import { getApi, getHeaders } from ".";
-import axios from "axios";
+import axios, { CancelToken } from "axios";
 
 export const getIcon = (options: {
 	id: string;
@@ -16,12 +16,14 @@ export const getIcon = (options: {
 		: `https://cdn.discordapp.com/embed/avatars/${Math.floor(Math.random() * 5)}.png`;
 };
 
-export const getGuilds = async (): Promise<ApiUserGuilds | null> => {
+export const getGuilds = async (token: CancelToken): Promise<ApiUserGuilds | null> => {
 	try {
-		const res = await axios.get<ApiUserGuilds>(getApi() + "/api/guilds", getHeaders(true));
+		const res = await axios.get<ApiUserGuilds>(getApi() + "/api/guilds", getHeaders(true, token));
 
 		return res.data ?? null;
 	} catch (e) {
+		if (e.message && e.message === "cancelled") return null;
+
 		store.addNotification({
 			container: "bottom-right",
 			title: "An unexpected error occured",
@@ -39,15 +41,21 @@ export const getGuilds = async (): Promise<ApiUserGuilds | null> => {
 	}
 };
 
-export const getGuild = async (guildId: string, second = false): Promise<Guild | null> => {
+export const getGuild = async (
+	guildId: string,
+	second = false,
+	token: CancelToken
+): Promise<Guild | null> => {
 	try {
 		const res = await axios.get<Guild>(
 			getApi(second ? 2 : 1) + `/api/guild?guildId=${guildId}`,
-			getHeaders(true)
+			getHeaders(true, token)
 		);
 
 		return res.data ?? null;
 	} catch (e) {
+		if (e.message && e.message === "cancelled") return null;
+
 		store.addNotification({
 			container: "bottom-right",
 			title: "An unexpected error occured",
@@ -68,17 +76,20 @@ export const getGuild = async (guildId: string, second = false): Promise<Guild |
 export const updateGuild = async (
 	guildId: string,
 	body: GuildConfig,
-	second = false
+	second = false,
+	token?: CancelToken
 ): Promise<Guild | null> => {
 	try {
 		const res = await axios.post(
 			getApi(second ? 2 : 1) + "/api/guild",
 			{ data: body, guildId },
-			getHeaders(true)
+			getHeaders(true, token)
 		);
 
 		return res.data ?? null;
 	} catch (e) {
+		if (e.message && e.message === "cancelled") return null;
+
 		store.addNotification({
 			container: "bottom-right",
 			title: "An unexpected error occured",

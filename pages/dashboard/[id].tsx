@@ -6,26 +6,25 @@ import React, { useEffect, useState } from "react";
 import Loader from "react-loader-spinner";
 import { useRouter } from "next/dist/client/router";
 import NotFound from "../404";
+import axios from "axios";
 
 const Dashboard: React.FC<{
 	user: User | null;
 	loading: boolean;
 }> = ({ user, loading }) => {
 	const [guild, setGuild] = useState<Guild | null | undefined>(undefined);
-
 	const { query } = useRouter();
+
 	useEffect(() => {
-		const load = async () => {
-			const id = Array.isArray(query.id) ? query.id[0] : query.id ?? "";
-			const bot = Array.isArray(query.bot) ? Number(query.bot[0]) : Number(query.bot) ?? 1;
+		const { token, cancel } = axios.CancelToken.source();
+		const id = Array.isArray(query.id) ? query.id[0] : query.id ?? "";
+		const bot = Array.isArray(query.bot) ? Number(query.bot[0]) : Number(query.bot) ?? 1;
 
-			if (id) {
-				const g = await getGuild(id, bot === 2);
-				setGuild(g || null);
-			}
-		};
+		getGuild(id, bot === 2, token).then((data) => {
+			setGuild(data || null);
+		});
 
-		load();
+		return () => cancel("cancelled");
 	}, [query]);
 
 	if (!loading && !user) return <Unauthorized />;

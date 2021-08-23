@@ -6,6 +6,7 @@ import Unauthorized from "../../components/unauthorized";
 import Loader from "react-loader-spinner";
 import { createPlaylist, getPlaylists } from "../../utils/Playlists";
 import { uniqueNamesGenerator, animals, adjectives, colors } from "unique-names-generator";
+import axios from "axios";
 
 const PlaylistLanding: React.FC<{
 	user: User | null;
@@ -15,12 +16,10 @@ const PlaylistLanding: React.FC<{
 	const [creating, setCreating] = useState(false);
 
 	useEffect(() => {
-		const fn = async () => {
-			const data = await getPlaylists();
-			if (data) setPlaylists(data);
-		};
+		const { token, cancel } = axios.CancelToken.source();
+		getPlaylists(token).then((data) => setPlaylists(data));
 
-		fn();
+		return () => cancel("cancelled");
 	}, []);
 
 	const create = async () => {

@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import PlaylistSave from "../../components/saveNotification/PlaylistSave";
 import PlaylistItem from "../../components/playlistItem";
 import Link from "next/link";
+import axios from "axios";
 
 const PlaylistComponent: React.FC = () => {
 	const [playlist, setPlaylist] = useState<Playlist | undefined | null>(undefined);
@@ -27,17 +28,16 @@ const PlaylistComponent: React.FC = () => {
 
 	const { query } = useRouter();
 	useEffect(() => {
-		const load = async () => {
-			const id = Array.isArray(query.id) ? query.id[0] : query.id ?? "";
-			if (id) {
-				const pl = await getPlaylist(id);
-				setIsOwner(pl?.isOwner ?? false);
-				setPlaylist(pl?.playlist ?? null);
-				if (pl) setEdited(pl.playlist);
-			}
-		};
+		const id = Array.isArray(query.id) ? query.id[0] : query.id ?? "";
+		const { token, cancel } = axios.CancelToken.source();
+		if (id)
+			getPlaylist(id, token).then((data) => {
+				setIsOwner(data?.isOwner ?? false);
+				setPlaylist(data?.playlist ?? null);
+				if (data) setEdited(data.playlist);
+			});
 
-		load();
+		return () => cancel("cancelled");
 	}, [query]);
 
 	useEffect(() => {

@@ -5,17 +5,18 @@ import Guild from "../../components/guild";
 import Loader from "react-loader-spinner";
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const Dashboard: React.FC<{ user: User | null; loading: boolean }> = ({ user, loading }) => {
 	const [guilds, setGuilds] = useState<ApiUserGuilds | null>();
 
 	useEffect(() => {
-		const fn = async () => {
-			const res2 = await getGuilds();
-			if (res2) setGuilds(res2);
-		};
+		const { token, cancel } = axios.CancelToken.source();
+		getGuilds(token).then((data) => {
+			if (data) setGuilds(data);
+		});
 
-		fn();
+		return () => cancel("cancelled");
 	}, []);
 
 	return !user && !loading ? (

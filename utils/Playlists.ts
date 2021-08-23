@@ -1,11 +1,11 @@
 import { store } from "react-notifications-component";
 import { Playlist, Playlists } from "../types";
 import { getApi, getHeaders } from ".";
-import axios from "axios";
+import axios, { CancelToken } from "axios";
 
-export const getPlaylists = async (): Promise<Playlists | null> => {
+export const getPlaylists = async (token: CancelToken): Promise<Playlists | null> => {
 	try {
-		const res = await axios.get<Playlists>(getApi() + "/api/playlists", getHeaders(true));
+		const res = await axios.get<Playlists>(getApi() + "/api/playlists", getHeaders(true, token));
 
 		return res.data ?? null;
 	} catch (e) {
@@ -27,12 +27,13 @@ export const getPlaylists = async (): Promise<Playlists | null> => {
 };
 
 export const getPlaylist = async (
-	id: string
+	id: string,
+	token: CancelToken
 ): Promise<{ playlist: Playlist; isOwner: boolean } | null> => {
 	try {
 		const res = await axios.get<{ playlist: Playlist; isOwner: boolean }>(
 			getApi() + `/api/playlist?playlistId=${id}`,
-			getHeaders(true)
+			getHeaders(true, token)
 		);
 
 		return res.data ?? null;
@@ -54,14 +55,19 @@ export const getPlaylist = async (
 	}
 };
 
-export const updatePlaylist = async (body: {
-	playlistId: string;
-	songs: string[];
-	name: string;
-}): Promise<void> => {
+export const updatePlaylist = async (
+	body: {
+		playlistId: string;
+		songs: string[];
+		name: string;
+	},
+	token?: CancelToken
+): Promise<void> => {
 	try {
-		await axios.post(getApi() + "/api/playlist", body, getHeaders(true));
+		await axios.post(getApi() + "/api/playlist", body, getHeaders(true, token));
 	} catch (e) {
+		if (e.message && e.message === "cancelled") return;
+
 		store.addNotification({
 			container: "bottom-right",
 			title: "An unexpected error occured",
@@ -77,12 +83,14 @@ export const updatePlaylist = async (body: {
 	}
 };
 
-export const createPlaylist = async (name: string): Promise<string | null> => {
+export const createPlaylist = async (name: string, token?: CancelToken): Promise<string | null> => {
 	try {
-		const res = await axios.put(getApi() + "/api/playlist", { name }, getHeaders(true));
+		const res = await axios.put(getApi() + "/api/playlist", { name }, getHeaders(true, token));
 
 		return res.data ?? null;
 	} catch (e) {
+		if (e.message && e.message === "cancelled") return null;
+
 		store.addNotification({
 			container: "bottom-right",
 			title: "An unexpected error occured",
@@ -100,10 +108,12 @@ export const createPlaylist = async (name: string): Promise<string | null> => {
 	}
 };
 
-export const deletePlaylist = async (id: string): Promise<void> => {
+export const deletePlaylist = async (id: string, token?: CancelToken): Promise<void> => {
 	try {
-		await axios.delete(getApi() + `/api/playlist?playlistId=${id}`, getHeaders(true));
+		await axios.delete(getApi() + `/api/playlist?playlistId=${id}`, getHeaders(true, token));
 	} catch (e) {
+		if (e.message && e.message === "cancelled") return;
+
 		store.addNotification({
 			container: "bottom-right",
 			title: "An unexpected error occured",
