@@ -36,8 +36,8 @@ const Footer: React.FC = () => {
 					&nbsp;with&nbsp;
 					<i className="fas fa-heart" />
 					&nbsp;by&nbsp;
-					<p className="link" onClick={() => window.open("https://daangamesdg.wtf/")}>
-						DaanGamesDG
+					<p className="link" onClick={() => window.open("https://stereo-bot.tk/github")}>
+						Stereo
 					</p>
 				</div>
 			</div>
