@@ -48,7 +48,7 @@ const Dashboard: React.FC<{ user: User | null; loading: boolean }> = ({ user, lo
 										icon={getIcon({
 											id: g.id,
 											hash: g.icon,
-											type: g.icon.startsWith("a_") ? "gif" : "png",
+											type: g.icon?.startsWith("a_") ? "gif" : "png",
 											size: 512,
 										})}
 										id={g.id}
@@ -62,7 +62,7 @@ const Dashboard: React.FC<{ user: User | null; loading: boolean }> = ({ user, lo
 										icon={getIcon({
 											id: g.id,
 											hash: g.icon,
-											type: g.icon.startsWith("a_") ? "gif" : "png",
+											type: g.icon?.startsWith("a_") ? "gif" : "png",
 											size: 512,
 										})}
 										id={g.id}

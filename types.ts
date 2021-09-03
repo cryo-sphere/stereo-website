@@ -12,7 +12,7 @@ export interface User {
 export interface UserGuild {
 	id: string;
 	name: string;
-	icon: string;
+	icon: string | null;
 	owner: boolean;
 	permissions: string;
 	features: string[];
