@@ -3,7 +3,7 @@ module.exports = {
 	redirects: () => [
 		{
 			source: "/legal",
-			destination: "https://cdn.daangamesdg.wtf/stereo/legal.pdf",
+			destination: "https://cdn.daangamesdg.xyz/stereo/legal.pdf",
 			permanent: true,
 		},
 	],
