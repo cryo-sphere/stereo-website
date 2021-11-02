@@ -11,10 +11,12 @@ import { getUser } from "../utils/User";
 import { User } from "../types";
 import Footer from "../components/footer";
 import axios from "axios";
+import { useCookies } from "react-cookie";
 
 const App = ({ Component, pageProps, router }: AppProps) => {
 	const [loading, setLoading] = useState<boolean>(true);
 	const [user, setUser] = useState<User | null>(null);
+	const [cookies] = useCookies(["STEREO_AUTH"]);
 
 	useEffect(() => {
 		const { token, cancel } = axios.CancelToken.source();
@@ -24,7 +26,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
 		});
 
 		return () => cancel("cancelled");
-	}, []);
+	}, [cookies]);
 
 	return (
 		<>
