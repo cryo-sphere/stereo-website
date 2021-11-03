@@ -10,7 +10,7 @@ const Callback: React.FC = () => {
 
 	useEffect(() => {
 		const cookie = Array.isArray(query.cookie) ? query.cookie[0] : query.cookie;
-		if (cookie) setCookie("STEREO_AUTH", cookie);
+		if (cookie) setCookie("STEREO_AUTH", cookie, { domain: `.${document.location.host}` });
 
 		replace("/");
 	}, [query]);
