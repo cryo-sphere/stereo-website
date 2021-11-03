@@ -1,4 +1,4 @@
-import Select, { OptionsType, ValueType, defaultTheme } from "react-select";
+import Select, { Options, PropsValue, defaultTheme } from "react-select";
 import { FieldProps } from "formik";
 import React from "react";
 
@@ -9,7 +9,7 @@ interface Option {
 
 interface CustomSelectProps extends FieldProps {
 	disabled?: string[];
-	options: OptionsType<Option>;
+	options: Options<Option>;
 	isMulti?: boolean;
 	className?: string;
 	placeholder?: string;
@@ -38,7 +38,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
 		return theme;
 	};
 
-	const onChange = (option: ValueType<Option | Option[], boolean>) => {
+	const onChange = (option: PropsValue<Option>) => {
 		const val = isMulti
 			? (option as Option[]).map((item: Option) => item.value)
 			: (option as Option).value;
