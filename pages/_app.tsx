@@ -12,6 +12,7 @@ import { User } from "../types";
 import Footer from "../components/footer";
 import axios from "axios";
 import { useCookies } from "react-cookie";
+import Head from "next/head";
 
 const App = ({ Component, pageProps, router }: AppProps) => {
 	const [loading, setLoading] = useState<boolean>(true);
@@ -30,6 +31,12 @@ const App = ({ Component, pageProps, router }: AppProps) => {
 
 	return (
 		<>
+			<Head>
+				<link
+					rel="stylesheet"
+					href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+				/>
+			</Head>
 			<Navbar user={user} />
 			<ReactNotification />
 			<AnimatePresence exitBeforeEnter>
