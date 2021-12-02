@@ -1,7 +1,16 @@
-import type { NextPage } from "next";
+import type { GetServerSidePropsContext, GetServerSidePropsResult, NextPage } from "next";
+import { getTranslations, LandingTranslations } from "../lib";
 
-const Home: NextPage = () => {
-	return <div>Soon™️</div>;
+const Landing: NextPage<{ t: LandingTranslations }> = ({ t }) => {
+	return <div>{t.test}</div>;
 };
 
-export default Home;
+export function getServerSideProps(ctx: GetServerSidePropsContext): GetServerSidePropsResult<{ t: LandingTranslations }> {
+	return {
+		props: {
+			t: getTranslations<LandingTranslations>(ctx.locale, "landing")
+		}
+	};
+}
+
+export default Landing;
