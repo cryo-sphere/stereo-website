@@ -23,7 +23,7 @@
 		"@sapphire/ts-config": "^3.1.6",
 		"@types/node": "16.11.11",
 		"@types/react": "17.0.37",
-		"eslint": "7",
+		"eslint": "latest",
 		"eslint-config-next": "12.0.4",
 		"husky": "^7.0.4",
 		"lint-staged": "^12.1.2",

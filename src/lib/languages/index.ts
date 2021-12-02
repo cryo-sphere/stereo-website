@@ -5,7 +5,9 @@ import { join } from "path";
 
 const logger = new Logger({ name: "LanguageHandler" });
 
-export function getTranslations<T = unknown>(language = "en", file: string): T {
+export function getTranslations<T = unknown>(language: string | undefined, file: string): T {
+	if (typeof language !== "string") language = "en";
+
 	const languages = readdirSync(LANGUAGE_DIR);
 	if (!languages.includes(language)) {
 		logger.warn(`[getTranslations]: ${language} is not a valid language, using "en" now`);
