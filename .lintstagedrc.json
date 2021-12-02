@@ -1,3 +1,3 @@
 {
-	"**/*.{js,jsx,ts,tsx}": ["yarn build .", "prettier --fix"]
+	"**/*.{js,jsx,ts,tsx}": ["yarn build .", "prettier src --write"]
 }
