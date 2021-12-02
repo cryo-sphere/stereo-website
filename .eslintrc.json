@@ -1,3 +1,3 @@
 {
-  "extends": "next/core-web-vitals"
+	"extends": ["@sapphire", "next/core-web-vitals"]
 }
