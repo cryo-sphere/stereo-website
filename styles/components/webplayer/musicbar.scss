@@ -43,3 +43,84 @@
 		white-space: nowrap;
 	}
 }
+
+.musicbar-track-options {
+	width: 500px;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.musicbar-track-volume-slider {
+	width: 80%;
+	box-shadow: none !important;
+
+	.rangeslider__handle::after {
+		display: none;
+	}
+
+	.rangeslider__fill {
+		background-color: $main !important;
+		box-shadow: none !important;
+	}
+
+	@media screen and (max-width: 800px) {
+		width: 100%;
+	}
+}
+
+.musicbar-volume {
+	width: 250px;
+	height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.musicbar__track-shuffle,
+.musicbar__track-repeat {
+	cursor: pointer;
+
+	path {
+		fill: #fff;
+		transition: fill 0.5s ease;
+	}
+
+	&:hover path {
+		fill: $green;
+	}
+
+	&:active path {
+		fill: $green;
+	}
+}
+
+.musicbar__track-previous,
+.musicbar__track-next {
+	cursor: pointer;
+
+	path {
+		fill: #fff;
+		transition: fill 0.5s ease;
+	}
+
+	&:hover path {
+		fill: #b3b3b3;
+	}
+}
+
+.musicbar__track-play {
+	height: 35px;
+	width: 35px;
+	border-radius: 50%;
+	cursor: pointer;
+
+	background-color: $white;
+	transition: background-color 0.5s ease;
+
+	&:hover {
+		background-color: $main;
+	}
+}

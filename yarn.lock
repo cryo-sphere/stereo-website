@@ -678,7 +678,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:17.0.37":
+"@types/react-rangeslider@npm:^2.2.4":
+  version: 2.2.4
+  resolution: "@types/react-rangeslider@npm:2.2.4"
+  dependencies:
+    "@types/react": "*"
+  checksum: a7d897b699c01b9ba6857a4d6dfb7c02407d0d8e196a208204a9fbe799f732a9d5a8adb6da07189a178710070178ea674e6c7d6556ec8124a3e915b868657c1f
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:*, @types/react@npm:17.0.37":
   version: 17.0.37
   resolution: "@types/react@npm:17.0.37"
   dependencies:
@@ -1526,6 +1535,13 @@ __metadata:
   version: 2.2.6
   resolution: "classnames@npm:2.2.6"
   checksum: 09a4fda780158aa8399079898eabeeca0c48c28641d9e4de140db7412e5e346843039ded1af0152f755afc2cc246ff8c3d6f227bf0dcb004e070b7fa14ec54cc
+  languageName: node
+  linkType: hard
+
+"classnames@npm:^2.2.3":
+  version: 2.3.1
+  resolution: "classnames@npm:2.3.1"
+  checksum: 14db8889d56c267a591f08b0834989fe542d47fac659af5a539e110cc4266694e8de86e4e3bbd271157dbd831361310a8293e0167141e80b0f03a0f175c80960
   languageName: node
   linkType: hard
 
@@ -4767,6 +4783,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-rangeslider@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "react-rangeslider@npm:2.2.0"
+  dependencies:
+    classnames: ^2.2.3
+    resize-observer-polyfill: ^1.4.2
+  peerDependencies:
+    react: ^0.14.0 || ^15.0.0
+  checksum: b08c5394f2aa6da761071a7d4b3ec0035497b007e495f9cbe32616db57afd3ac431bba750d1638d3763c4af2d7c32c6ec9b6d1f62a96ff2ef36e2beb5d80cfd0
+  languageName: node
+  linkType: hard
+
 "react-refresh@npm:0.8.3":
   version: 0.8.3
   resolution: "react-refresh@npm:0.8.3"
@@ -4881,6 +4909,13 @@ __metadata:
   version: 2.1.1
   resolution: "require-directory@npm:2.1.1"
   checksum: fb47e70bf0001fdeabdc0429d431863e9475e7e43ea5f94ad86503d918423c1543361cc5166d713eaa7029dd7a3d34775af04764bebff99ef413111a5af18c80
+  languageName: node
+  linkType: hard
+
+"resize-observer-polyfill@npm:^1.4.2":
+  version: 1.5.1
+  resolution: "resize-observer-polyfill@npm:1.5.1"
+  checksum: 57e7f79489867b00ba43c9c051524a5c8f162a61d5547e99333549afc23e15c44fd43f2f318ea0261ea98c0eb3158cca261e6f48d66e1ed1cd1f340a43977094
   languageName: node
   linkType: hard
 
@@ -5344,6 +5379,7 @@ __metadata:
     "@tippyjs/react": ^4.2.6
     "@types/node": 16.11.11
     "@types/react": 17.0.37
+    "@types/react-rangeslider": ^2.2.4
     eslint: latest
     eslint-config-next: 12.0.4
     husky: ^7.0.4
@@ -5351,6 +5387,7 @@ __metadata:
     next: 12.0.4
     react: 17.0.2
     react-dom: 17.0.2
+    react-rangeslider: ^2.2.0
     sass: ^1.44.0
     typescript: 4.5.2
   languageName: unknown
