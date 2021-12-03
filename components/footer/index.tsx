@@ -32,6 +32,14 @@ const Footer: React.FC = () => {
 			</div>
 			<div className="footer-level-2">
 				<div className="footer-credits">
+					<a
+						target="_blank"
+						rel="noreferrer"
+						href="https://vercel.com/?utm_source=stereo-bot&utm_campaign=oss">
+						<img src="/vercel.svg" />
+					</a>
+				</div>
+				<div className="footer-credits">
 					<i className="fas fa-code" />
 					&nbsp;with&nbsp;
 					<i className="fas fa-heart" />

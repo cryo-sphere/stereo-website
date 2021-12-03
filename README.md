@@ -12,7 +12,11 @@
   </a>
 </p>
 
-> Stereo’s website/dashboard. Created using React and NextJS, written in TypeScript.
+Stereo’s website/dashboard. Created using React and NextJS, written in TypeScript.
+
+## Powered by Vercel <a href="https://vercel.com/?utm_source=stereo-bot&utm_campaign=oss" target="_blank"><img src="public/vercel.svg" align="right" width="30%"></a>
+
+This project is sponsored by Vercel, they offer free and paid webhosting. We use their service to keep <a href="https://stereo-bot.tk" target="_blank">the dashboard</a> online 24/7, they guarantee 99.9% uptime. Checkout their service at <a href="https://vercel.com/?utm_source=stereo-bot&utm_campaign=oss" target="_blank">vercel.com</a>
 
 ## Important information
 
