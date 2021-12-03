@@ -4,16 +4,35 @@
 	align-items: center;
 	justify-content: center;
 	background-color: $black;
-	border-right: 1px solid rgba($white, 0.5);
+
+	width: 200px;
+	min-width: 150px;
+	max-width: 400px;
+
 	height: 100vh;
 	max-height: 100vh;
-	overflow-y: scroll;
-	max-width: 200px;
+	overflow: hidden;
+
+	resize: horizontal;
 }
 
 .filterbar-list {
 	list-style: none;
 	text-align: center;
+
+	position: relative;
+	z-index: 0;
+
+	overflow-y: scroll;
+	width: 100%;
+}
+
+.filterbar-title {
+	user-select: none; /* standard syntax */
+	-webkit-user-select: none; /* webkit (safari, chrome) browsers */
+	-moz-user-select: none; /* mozilla browsers */
+	-khtml-user-select: none; /* webkit (konqueror) browsers */
+	-ms-user-select: none; /* IE10+ */
 }
 
 .filterbar-item {
@@ -21,6 +40,12 @@
 	transition: color 0.5s ease;
 	font-size: 1.25rem;
 	cursor: pointer;
+
+	user-select: none; /* standard syntax */
+	-webkit-user-select: none; /* webkit (safari, chrome) browsers */
+	-moz-user-select: none; /* mozilla browsers */
+	-khtml-user-select: none; /* webkit (konqueror) browsers */
+	-ms-user-select: none; /* IE10+ */
 
 	&:hover {
 		color: rgba($white, 0.6);

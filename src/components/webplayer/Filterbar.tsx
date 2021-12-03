@@ -11,6 +11,103 @@ export const Filterbar: React.FC = () => {
 				<li>
 					<button className="filterbar-item filterbar-active">Slowed</button>
 				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
+				<li>
+					<button className="filterbar-item filterbar-active">Slowed</button>
+				</li>
 			</ul>
 		</div>
 	);
