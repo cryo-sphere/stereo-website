@@ -1,11 +1,12 @@
 import type { NextPage } from "next";
 import React from "react";
-import { Filterbar } from "../components";
+import { Filterbar, MusicBar } from "../components";
 
 const Webplayer: NextPage = () => {
 	return (
-		<main>
+		<main className="webplayer">
 			<Filterbar />
+			<MusicBar />
 		</main>
 	);
 };
