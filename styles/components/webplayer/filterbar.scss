@@ -9,8 +9,8 @@
 	min-width: 150px;
 	max-width: 400px;
 
-	height: 100vh;
-	max-height: 100vh;
+	height: calc(100vh - 100px);
+	max-height: calc(100vh - 100px);
 	overflow: hidden;
 
 	resize: horizontal;
@@ -27,7 +27,17 @@
 	width: 100%;
 }
 
+.filterbar-separator {
+	background-color: #282828;
+	border: none;
+	height: 1px;
+	width: 90%;
+	margin: 0 24px 8px 24px;
+}
+
 .filterbar-title {
+	font-weight: 500;
+
 	user-select: none; /* standard syntax */
 	-webkit-user-select: none; /* webkit (safari, chrome) browsers */
 	-moz-user-select: none; /* mozilla browsers */

@@ -4,6 +4,7 @@ export const Filterbar: React.FC = () => {
 	return (
 		<div className="filterbar">
 			<h1 className="filterbar-title">Filters</h1>
+			<hr className="filterbar-separator"></hr>
 			<ul className="filterbar-list">
 				<li>
 					<button className="filterbar-item">Vaporwave</button>
