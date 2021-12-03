@@ -1,0 +1,32 @@
+.filterbar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: $black;
+	border-right: 1px solid rgba($white, 0.5);
+	height: 100vh;
+	max-height: 100vh;
+	overflow-y: scroll;
+	max-width: 200px;
+}
+
+.filterbar-list {
+	list-style: none;
+	text-align: center;
+}
+
+.filterbar-item {
+	color: rgba($white, 0.4);
+	transition: color 0.5s ease;
+	font-size: 1.25rem;
+	cursor: pointer;
+
+	&:hover {
+		color: rgba($white, 0.6);
+	}
+
+	&.filterbar-active {
+		color: rgba($white, 0.9);
+	}
+}
