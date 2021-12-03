@@ -1,27 +1,20 @@
-import { readdirSync, readFileSync } from "fs";
+import { readdirSync } from "fs";
 import { LANGUAGE_DIR } from "..";
 import { Logger } from "@daangamesdg/logger";
-import { join } from "path";
+import * as languages from "../../../languages";
 
 const logger = new Logger({ name: "LanguageHandler" });
 
-export function getTranslations<T = unknown>(language: string | undefined, file: string): T {
+export function getTranslations(language: string | undefined) {
 	if (typeof language !== "string") language = "en";
 
-	const languages = readdirSync(LANGUAGE_DIR);
-	if (!languages.includes(language)) {
+	const translations = languages[language as keyof typeof languages];
+	if (!translations) {
 		logger.warn(`[getTranslations]: ${language} is not a valid language, using "en" now`);
-		language = "en";
+		languages["en" as keyof typeof languages];
 	}
 
-	const files = readdirSync(join(LANGUAGE_DIR, language));
-	if (!files.includes(`${file}.json`)) {
-		logger.fatal(`[getTranslations]: ${file} is not present in lanuage dir ${language}`);
-		throw new Error("Language Error");
-	}
-
-	const contents = readFileSync(join(LANGUAGE_DIR, language, `${file}.json`), "utf-8");
-	return JSON.parse(contents) as T;
+	return translations;
 }
 
 export function getAvailableLanguageKeys(): string[] {
