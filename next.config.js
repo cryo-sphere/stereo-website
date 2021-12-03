@@ -2,7 +2,7 @@
 module.exports = {
 	reactStrictMode: true,
 	images: {
-		domains: ["https://cdn.stereo-bot.tk/", "https://static.daangamesdg.xyz/", "https://cdn.discordapp.com"]
+		domains: ["cdn.stereo-bot.tk", "static.daangamesdg.xyz", "cdn.discordapp.com", "img.youtube.com", "api.stereo-bot.tk"]
 	},
 	i18n: {
 		defaultLocale: "en",
