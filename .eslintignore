@@ -1,4 +1,6 @@
 node_modules
 .next
 .yarn
+
+next-env.d.ts
 next.config.js
