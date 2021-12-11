@@ -67,7 +67,8 @@ export const MusicBar: React.FC = () => {
 						)}
 					</button>
 				</div>
-				<div>
+				<div className="musicbar__play-slider">
+					<p>00:00</p>
 					<RangeSlider
 						className="musicbar-track-volume-slider"
 						axis="x"
@@ -89,6 +90,7 @@ export const MusicBar: React.FC = () => {
 							}
 						}}
 					/>
+					<p>00:00</p>
 				</div>
 			</div>
 			<div className="musicbar-volume">

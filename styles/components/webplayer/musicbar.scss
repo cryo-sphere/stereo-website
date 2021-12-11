@@ -132,3 +132,14 @@
 		background-color: $main;
 	}
 }
+
+.musicbar__play-slider {
+	.musicbar-track-volume-slider {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	p {
+		font-weight: 300;
+	}
+}
