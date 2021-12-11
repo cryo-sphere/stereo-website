@@ -13,7 +13,7 @@ export const PlayerBar: React.FC = () => {
 				left: true
 			}}
 		>
-			hello
+			<h1>Users</h1>
 		</Resizable>
 	);
 };
