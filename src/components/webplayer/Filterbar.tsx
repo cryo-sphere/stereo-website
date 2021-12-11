@@ -2,10 +2,20 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Tippy } from "../Tippy";
+import { Resizable } from "re-resizable";
 
 export const Filterbar: React.FC = () => {
 	return (
-		<div className="filterbar">
+		<Resizable
+			className="webplayer-bar"
+			defaultSize={{
+				width: 200,
+				height: "calc(100vh - 100px)"
+			}}
+			enable={{
+				right: true
+			}}
+		>
 			<Link href="/dashboard">
 				<a>
 					<Tippy content="Back to dashboard">
@@ -60,6 +70,6 @@ export const Filterbar: React.FC = () => {
 					<button className="filterbar-item">none</button>
 				</li>
 			</ul>
-		</div>
+		</Resizable>
 	);
 };
