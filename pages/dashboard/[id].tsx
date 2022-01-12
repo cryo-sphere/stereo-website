@@ -3,7 +3,7 @@ import Unauthorized from "../../components/unauthorized";
 import Settings from "../../components/settings";
 import { getGuild } from "../../utils/Guilds";
 import React, { useEffect, useState } from "react";
-import Loader from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 import { useRouter } from "next/dist/client/router";
 import NotFound from "../404";
 import axios from "axios";
@@ -35,7 +35,7 @@ const Dashboard: React.FC<{
 		<NotFound />
 	) : (
 		<div style={{ minHeight: "100vh", minWidth: "100vw", display: "grid", placeItems: "center" }}>
-			<Loader type="ThreeDots" color="#fff" height={80} width={80} />
+			<ThreeDots color="#fff" height={80} width={80} />
 		</div>
 	);
 };

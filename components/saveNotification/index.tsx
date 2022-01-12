@@ -1,6 +1,6 @@
 import { motion, useAnimation, Variants } from "framer-motion";
 import { GuildConfig } from "../../types";
-import Loader from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 import React, { useEffect } from "react";
 
 interface Props {
@@ -71,11 +71,7 @@ const SaveNotification: React.FC<Props> = ({
 							cursor: isSubmitting ? "not-allowed" : "pointer",
 						}}
 						onClick={!isSubmitting ? submitForm : () => null}>
-						{isSubmitting ? (
-							<Loader type="ThreeDots" color="#fff" height={20} width={60} />
-						) : (
-							"Save"
-						)}
+						{isSubmitting ? <ThreeDots color="#fff" height={20} width={60} /> : "Save"}
 					</div>
 				</div>
 			</div>

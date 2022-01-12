@@ -3,7 +3,7 @@ import Playlist from "../../components/playlist";
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import Unauthorized from "../../components/unauthorized";
-import Loader from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 import { createPlaylist, getPlaylists } from "../../utils/Playlists";
 import { uniqueNamesGenerator, animals, adjectives, colors } from "unique-names-generator";
 import axios from "axios";
@@ -53,7 +53,7 @@ const PlaylistLanding: React.FC<{
 			</Head>
 			{creating ? (
 				<div style={{ width: "100vw", height: "100vh", display: "grid", placeItems: "center" }}>
-					<Loader type="ThreeDots" color="#fff" height={120} width={120} />
+					<ThreeDots color="#fff" height={120} width={120} />
 				</div>
 			) : (
 				<main className="background-full" style={{ paddingBottom: "2rem" }}>
@@ -75,7 +75,7 @@ const PlaylistLanding: React.FC<{
 								/>
 							))
 						) : (
-							<Loader type="ThreeDots" color="#fff" height={120} width={120} />
+							<ThreeDots color="#fff" height={120} width={120} />
 						)}
 					</div>
 				</main>

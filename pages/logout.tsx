@@ -3,7 +3,7 @@ import { useRouter } from "next/dist/client/router";
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
-import Loader from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 import { User } from "../types";
 import { getApi } from "../utils";
 
@@ -30,7 +30,7 @@ const NotFound: React.FC<{ loading: boolean; user: User }> = ({ loading, user })
 				<title>Stereo - Landing</title>
 			</Head>
 			<div className="background" style={{ placeItems: "center", display: "grid" }}>
-				<Loader type="ThreeDots" color="#fff" height={120} width={120} />
+				<ThreeDots color="#fff" height={120} width={120} />
 			</div>
 		</>
 	);

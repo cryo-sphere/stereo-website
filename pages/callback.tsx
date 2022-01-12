@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { useCookies } from "react-cookie";
-import Loader from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 
 const Callback: React.FC = () => {
 	const { query, replace } = useRouter();
@@ -32,7 +32,7 @@ const Callback: React.FC = () => {
 			<div className="notFound-container background">
 				<div
 					style={{ minHeight: "100vh", minWidth: "100vw", display: "grid", placeItems: "center" }}>
-					<Loader type="ThreeDots" color="#fff" height={80} width={80} />
+					<ThreeDots color="#fff" height={80} width={80} />
 				</div>
 			</div>
 		</>

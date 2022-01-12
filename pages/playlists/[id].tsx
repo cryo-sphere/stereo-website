@@ -1,6 +1,6 @@
 import { Playlist } from "../../types";
 import React, { createRef, useEffect, useState } from "react";
-import Loader from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 import NotFound from "../404";
 import { deletePlaylist, getPlaylist, updatePlaylist } from "../../utils/Playlists";
 import Head from "next/head";
@@ -268,7 +268,7 @@ const PlaylistComponent: React.FC = () => {
 		</>
 	) : playlist === undefined ? (
 		<div style={{ minHeight: "100vh", minWidth: "100vw", display: "grid", placeItems: "center" }}>
-			<Loader type="ThreeDots" color="#fff" height={80} width={80} />
+			<ThreeDots color="#fff" height={80} width={80} />
 		</div>
 	) : (
 		<NotFound />

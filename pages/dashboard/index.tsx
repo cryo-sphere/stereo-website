@@ -2,7 +2,7 @@ import Unauthorized from "../../components/unauthorized";
 import { ApiUserGuilds, User } from "../../types";
 import { getGuilds, getIcon } from "../../utils/Guilds";
 import Guild from "../../components/guild";
-import Loader from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
@@ -75,7 +75,7 @@ const Dashboard: React.FC<{ user: User | null; loading: boolean }> = ({ user, lo
 							<p>Looks like you got an empty list, create a server on Discord to get started!</p>
 						)
 					) : (
-						<Loader type="ThreeDots" color="#fff" height={80} width={80} />
+						<ThreeDots color="#fff" height={80} width={80} />
 					)}
 				</div>
 			</div>
