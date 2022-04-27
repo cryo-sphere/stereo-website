@@ -4,10 +4,10 @@
   <a href="/" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
-  <a href="https://translate.stereo-bot.tk/project/stereo" target="_blank">
+  <a href="https://translate.stereo-bot.xyz/project/stereo" target="_blank">
     <img alt="Localized: Crowdin" src="https://badges.crowdin.net/stereo/localized.svg" />
   </a>
-    <a href="https://stereo-bot.tk/discord" target="_blank">
+    <a href="https://stereo-bot.xyz/discord" target="_blank">
     <img alt="Discord" src="https://img.shields.io/badge/-Discord-5865F2?logo=discord&logoColor=fff" />
   </a>
 </p>
@@ -16,7 +16,7 @@ Stereo’s website/dashboard. Created using React and NextJS, written in TypeScr
 
 ## Powered by Vercel <a href="https://vercel.com/?utm_source=stereo-bot&utm_campaign=oss" target="_blank"><img src="public/vercel.svg" align="right" width="30%"></a>
 
-This project is sponsored by Vercel, they offer free and paid webhosting. We use their service to keep <a href="https://stereo-bot.tk" target="_blank">the dashboard</a> online 24/7, they guarantee 99.9% uptime. Checkout their service at <a href="https://vercel.com/?utm_source=stereo-bot&utm_campaign=oss" target="_blank">vercel.com</a>
+This project is sponsored by Vercel, they offer free and paid webhosting. We use their service to keep <a href="https://stereo-bot.xyz" target="_blank">the dashboard</a> online 24/7, they guarantee 99.9% uptime. Checkout their service at <a href="https://vercel.com/?utm_source=stereo-bot&utm_campaign=oss" target="_blank">vercel.com</a>
 
 ## Important information
 
@@ -45,8 +45,8 @@ It's recommened to use `yarn run dev`, the developement server when you want to 
 
 👤 **DaanGamesDG**
 
-- Website: https://daangamesdg.wtf/
-- Email: <daan@daangamesdg.wtf>
+- Website: https://daangamesdg.xyz/
+- Email: <daan@daangamesdg.xyz>
 - Twitter: [@DaanGamesDG](https://twitter.com/DaanGamesDG)
 - Github: [@DaanGamesDG](https://github.com/DaanGamesDG)
 
